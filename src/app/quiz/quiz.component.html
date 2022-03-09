@@ -1,5 +1,8 @@
-<p>quiz works!</p>
+<p>Which one of these good looking photos is the real</p>
+<h2>{{ answerProfile.firstName }} {{ answerProfile.lastName }}</h2>
 
-<div *ngFor="let profile of profiles">
-  {{ profile.firstName }}
+<div class="options">
+  <div *ngFor="let profile of randomProfiles" class="option">
+    <div><img [src]="profile.headshot.url" alt="" /></div>
+  </div>
 </div>

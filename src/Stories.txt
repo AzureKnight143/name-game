@@ -1,0 +1,25 @@
+Home Page
+    Logo
+    Text
+    Play button
+
+Quiz
+    Header Text
+    Header Back button
+    Question Text
+    Display Employee Name
+    Display 6 Employee Pictures
+    Display Shadow on Picture Hover
+    When we select an Employee 
+        it displays the red icon for wrong
+            the continue button takes you to the results page
+        green icon for correct
+            the contihue button shows you 6 more Pictures
+
+Results
+    Displays congratulations text with number of questions correct out of 5
+    Return to home button
+    Display % correct
+    Display % incorrect
+    Display time taken
+    

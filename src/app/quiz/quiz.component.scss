@@ -1,0 +1,14 @@
+.options {
+  width: 860px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  .option {
+    width: 260px;
+    height: 260px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

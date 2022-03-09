@@ -1,22 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from '../models/profile';
-import { HttpClient } from '@angular/common/http';
+import { ProfileService } from '../services/profile.service.';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.sass'],
+  styleUrls: ['./quiz.component.scss'],
 })
 export class QuizComponent implements OnInit {
   public profiles: Profile[];
+  public randomProfiles: Profile[];
+  public answerProfile: Profile;
 
-  constructor(private http: HttpClient) {}
+  constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.http
-      .get<Profile[]>('https://namegame.willowtreeapps.com/api/v1.0/profiles')
-      .subscribe((result) => {
-        this.profiles = result;
-      });
+    this.profileService.getProfiles().subscribe((result) => {
+      this.profiles = result;
+      this.randomProfiles = this.profileService.getSixRandomProfiles(
+        this.profiles
+      );
+      this.answerProfile = this.profileService.getRandomName(
+        this.randomProfiles
+      );
+    });
   }
 }
